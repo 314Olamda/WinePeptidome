@@ -26,20 +26,19 @@ It combines two complementary UniProt data sources to give you both **canonical 
 ---
 
 ## 🧬 Pipeline Architecture
-
 ```mermaid
 graph TD
-    A[🚀 Start pipeline] --> B[UniProt REST API<br/>rest.uniprot.org]
-    A --> C[Proteins API<br/>ebi.ac.uk/proteins/api]
+    A[Start pipeline] --> B[UniProt REST API\nrest.uniprot.org]
+    A --> C[Proteins API\nebi.ac.uk/proteins/api]
 
-    B --> D[KB Entry Query<br/>mass:501–100000 + taxon]
-    D --> E[Link-header pagination<br/>no memory overflow]
-    E --> F[UniParc fallback<br/>for deleted accessions]
+    B --> D[KB Entry Query\nmass 501-100000 + taxon]
+    D --> E[Link-header pagination\nno memory overflow]
+    E --> F[UniParc fallback\nfor deleted accessions]
     E --> G[FASTA stream download]
 
-    C --> H[Coverage metadata check<br/>before bulk download]
-    H --> I[/proteomics/non-ptm<br/>Experimental peptide evidence]
-    H --> J[/proteomics/ptm<br/>PTM-modified peptides<br/>entry_pos = pep_start + pos − 1]
+    C --> H[Coverage metadata check\nbefore bulk download]
+    H --> I[proteomics non-ptm\nExperimental peptide evidence]
+    H --> J[proteomics ptm\nPTM-modified peptides\nentry_pos = pep_start + pos - 1]
 
     F --> K[(output/)]
     G --> K
