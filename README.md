@@ -110,7 +110,6 @@ This pipeline was developed within the **reLees** project (H.F.R.I. / NextGenera
 The mass window (501 Da → 100 kDa) was chosen to:
 - Exclude free amino acids and small dipeptides (already well characterised)
 - Capture the biologically active mid-range peptides released during yeast autolysis
-- Include the HMW protein fraction with known antifungal properties against *Phaeoacremonium minimum* and *Phaeomoniella chlamydospora*
 
 The **dual-API strategy** cross-validates canonical annotation (UniProt KB) with experimental mass-spectrometry evidence (Proteins API), producing a confirmed peptidome — only accessions present in both layers have genuine biological support.
 
